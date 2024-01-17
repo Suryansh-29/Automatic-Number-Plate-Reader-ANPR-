@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    .img{
+        margin:20px;
+        font-size:32px;
+        font-family: Arial, sans-sarif;
+        margin-top: 100px;
+        border: 1px solid black;
+        border-radius: 20px;
+        box-shadow: 0 0 10px black;
+        padding:10px;
+        padding-left: 140px;
+        background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(27, 37, 107));
+
+    }
+
+    button{
+        font-size: 20px;
+        border-radius:10px;
+        cursor: pointer;
+        margin-left: 1000px;
+    }
+
+    button:hover{
+        color:#fff;
+        background-color: #282F39;
+    }
+
+    label{
+        padding-left:50px;
+        color: white;
+    }
+
+    #imageInput{
+        padding:40px;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+    }
+
+    body {
+        background-color: rgb(51, 46, 145);
+        background-image: url("{% static 'download.jpeg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color:#282F39;
+      color: #fff;
+      text-align: center;
+    }
+    .logo{
+        display:inline-block;
+    }
+
+    #logo2 {
+        
+      max-width: 100px;
+      max-height: 100px;
+      float: left;
+    }
+
+    h1 {
+      font-size: 26px;
+      padding:15px;
+    }
+
+    .res{
+        max-width: 600px;
+        max-height: 600px;
+        margin:auto;
+        padding:auto;
+        border: 1px solid black;
+        border-radius:20px;
+        box-shadow:0 0 10px black;
+    }
+
+
+    .res2{
+        max-width: 200px;
+        max-height: 100px;
+        text-align: center;
+        margin:auto;
+        padding:auto;
+        margin-top:20px;
+        border: 1px solid black;
+        border-radius:10px;
+        box-shadow:0 0 10px black;
+    }
+
+    label{
+      margin-left: 400px;
+      padding: auto;
+    }
+
+    .res3{
+        
+        margin-top:20px;
+        margin-left:600px;
+        padding:auto;
+        font-size:26px;
+        color:whitesmoke;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="{% static 'logo.jpeg' %}" alt="logo" class="logo" id ="logo2">
+
+    <h1 class="logo">Automatic Number plate Reader</h1>
+  </header>
+
+  <form method="post" enctype="multipart/form-data" class="img">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="submit-button" type="submit"> Upload </button>
+</form>
+
+  <!-- <div class="res">
+    <img src="{% static '{{result}}' %}" alt="result" class="result">
+  </div> -->
+  
+  {% if number_plate_text %}
+  <div class="res3">Number Plate Detected </div>
+  
+  <div class="res2">
+        <h3>  {{ number_plate_text }}</h3>
+  </div>
+
+  {% endif %}
+
+  <!-- The rest of your content goes here -->
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Number plate Reader</title>
+
+    <style>
+        
+        .header_main{
+            text-align: center;
+            padding:20px;
+            background-color: #282F39;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            margin:auto;
+            color:#ddd
+            
+        }
+        .header{
+            display: inline-block;
+            
+            /* text-align: center;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 36px;
+            margin:auto;
+            padding : 20px;
+            background-color: #282F39;
+            color:#ddd */
+        }
+
+
+        #logo{
+            max-width: 100px;
+            max-height: 100px;
+            float:left;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("{% static 'lamborghini2.jpg' %}");
+            background-size: auto 800px;
+        }
+
+        .image-container {
+            width: 50%;
+            margin: 50px auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 150%;
+            display: block;
+        }
+
+        .image-caption {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px ;
+    }
+
+    .redirect-button {
+      display: inline-block;
+      margin:20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid #272829;
+      border-radius: 30px;
+      color: #282929;
+      background: transparent;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .redirect-button:hover {
+      color: #ffffff;
+      background: rgb(62, 62, 62);
+      /* filter: blur(1px); */
+    }
+
+    .main{
+        text-align: center;
+        color:#ffffff;
+        font-family: Arial, sans-sarif;
+        font-size:32px;
+        margin-top :150px;
+        border-radius: 11px;
+        border : 1px solid black;
+        padding:auto;
+        margin-left: 500px;
+        margin-right: 500px;
+        box-shadow:0 0 5px rgb(42, 42, 42);
+    }
+    </style>
+
+</head>
+<body>
+    <div class="header_main">
+
+        <img src="{% static 'logo.jpeg' %}" alt="logo" id="logo" class="header">
+            
+        <h1  id="header2" class="header"> Automatic Number plate Reader</h1>
+
+    </div>
+
+    <div class="main">
+        <p> <b>Choose the Format of Your File</b></p>
+    </div>
+
+    <div class="btn">
+        <a href="/image" class="redirect-button">Image</a>
+        <a href="/video" class="redirect-button">Video</a>
+    </div>
+
+    
+
+    
+</body>
+</html>
